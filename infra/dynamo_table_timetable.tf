@@ -4,7 +4,7 @@ resource "aws_dynamodb_table" "timetable-dynamodb-table" {
   read_capacity  = 5
   write_capacity = 5
   hash_key       = "id"
-  range_key      = "doctorId"
+#  range_key      = "doctorId"
 
   attribute {
     name = "id"
@@ -61,7 +61,14 @@ resource "aws_dynamodb_table" "timetable-dynamodb-table" {
   #    type = "S"
   #  }
 
-
+  global_secondary_index {
+    name               = "DoctorIdIndex"
+    hash_key           = "doctorId"
+    write_capacity     = 1
+    read_capacity      = 1
+    projection_type    = "INCLUDE"
+    non_key_attributes = ["sunday,monday,tuesday,wednesday,thursday,friday,saturday"]
+  }
 
   tags = {
     Name        = "timetable-dynamodb-table"
