@@ -11,10 +11,10 @@ resource "aws_dynamodb_table" "pacient-dynamodb-table" {
     type = "S"
   }
 
-#  attribute {
-#    name = "isActive"
-#    type = "BOOL"
-#  }
+  #  attribute {
+  #    name = "isActive"
+  #    type = "BOOL"
+  #  }
 
   #  attribute {
   #    name = "name"

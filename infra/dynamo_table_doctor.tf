@@ -11,10 +11,10 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
     type = "S"
   }
 
-#  attribute {
-#    name = "isActive"
-#    type = "BOOL"
-#  }
+  #  attribute {
+  #    name = "isActive"
+  #    type = "BOOL"
+  #  }
 
   #  attribute {
   #    name = "name"
@@ -56,10 +56,10 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
   #    type = "S"
   #  }
 
-  attribute {
-    name = "crm"
-    type = "S"
-  }
+#  attribute {
+#    name = "crm"
+#    type = "S"
+#  }
 
   attribute {
     name = "medicalSpecialty"
