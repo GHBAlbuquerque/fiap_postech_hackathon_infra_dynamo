@@ -37,7 +37,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
   #  }
 
   global_secondary_index {
-    name               = "AppointmntPacientIdIndex"
+    name               = "AppointmentPacientIdIndex"
     hash_key           = "doctorId"
     range_key          = "pacientId"
     write_capacity     = 1
@@ -47,7 +47,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
   }
 
   global_secondary_index {
-    name               = "AppointmntDateIndex"
+    name               = "AppointmentDateIndex"
     hash_key           = "doctorId"
     range_key          = "date"
     write_capacity     = 1
