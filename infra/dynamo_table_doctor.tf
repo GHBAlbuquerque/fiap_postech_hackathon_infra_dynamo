@@ -41,16 +41,6 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
   #    type = "S"
   #  }
 
-  #  attribute {
-  #    name = "creationTimestamp"
-  #    type = "S"
-  #  }
-
-  #  attribute {
-  #    name = "updateTimestamp"
-  #    type = "S"
-  #  }
-
 #  attribute {
 #    name = "crm"
 #    type = "S"
@@ -72,7 +62,7 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["name","birthday","cpf","email","contactNumber","isActive","crm"]
+    non_key_attributes = ["fullName","birthday","cpf","email","contactNumber","isActive","crm"]
   }
 
   global_secondary_index {

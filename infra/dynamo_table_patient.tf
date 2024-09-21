@@ -42,16 +42,6 @@ resource "aws_dynamodb_table" "patient-dynamodb-table" {
   #  }
 
   #  attribute {
-  #    name = "creationTimestamp"
-  #    type = "S"
-  #  }
-
-  #  attribute {
-  #    name = "updateTimestamp"
-  #    type = "S"
-  #  }
-
-  #  attribute {
   #    name = "isActive"
   #    type = "BOOL"
   #  }
