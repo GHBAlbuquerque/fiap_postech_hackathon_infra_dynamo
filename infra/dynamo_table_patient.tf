@@ -52,7 +52,7 @@ resource "aws_dynamodb_table" "patient-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["fullName","birthday","cpf","contactNumber","isActive"]
+    non_key_attributes = ["fullName","birthday","cpf","password","contactNumber","isActive"]
   }
 
   global_secondary_index {
@@ -61,7 +61,7 @@ resource "aws_dynamodb_table" "patient-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["fullName","birthday","email","contactNumber","isActive"]
+    non_key_attributes = ["fullName","birthday","email","password","contactNumber","isActive"]
   }
 
   tags = {
