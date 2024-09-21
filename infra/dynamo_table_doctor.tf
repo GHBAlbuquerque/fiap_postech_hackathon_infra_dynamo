@@ -1,4 +1,4 @@
-resource "aws_dynamodb_table" "appointment-dynamodb-table" {
+resource "aws_dynamodb_table" "doctor-dynamodb-table" {
   name           = "Doctor"
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
@@ -95,7 +95,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
   }
 
   tags = {
-    Name        = "appointment-dynamodb-table"
+    Name        = "doctor-dynamodb-table"
     Environment = "fiap-pos-tech"
   }
 }
