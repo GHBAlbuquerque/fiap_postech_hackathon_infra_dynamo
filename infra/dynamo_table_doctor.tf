@@ -11,10 +11,10 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
     type = "S"
   }
 
-  attribute {
-    name = "isActive"
-    type = "BOOL"
-  }
+#  attribute {
+#    name = "isActive"
+#    type = "BOOL"
+#  }
 
   #  attribute {
   #    name = "name"
@@ -67,9 +67,8 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
   }
 
   global_secondary_index {
-    name               = "AvailableBySpecialtyIndex"
+    name               = "SpecialtyIndex"
     hash_key           = "medicalSpecialty"
-    range_key          = "isActive"
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
