@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "appointment-dynamodb-table" {
-  name           = "Appointment"
+  name           = "Pacient"
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
   write_capacity = 5
