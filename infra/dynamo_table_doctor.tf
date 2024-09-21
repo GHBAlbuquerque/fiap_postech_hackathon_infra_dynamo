@@ -72,7 +72,7 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["id","name","birthday","cpf","email","contactNumber","isActive","crm"]
+    non_key_attributes = ["name","birthday","cpf","email","contactNumber","isActive","crm"]
   }
 
   global_secondary_index {
@@ -81,7 +81,7 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["id","fullName","birthday","cpf","contactNumber","isActive","crm","medicalSpecialty"]
+    non_key_attributes = ["fullName","birthday","cpf","contactNumber","isActive","crm","medicalSpecialty"]
   }
 
   global_secondary_index {
@@ -90,7 +90,7 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["id","fullName","birthday","email","contactNumber","isActive","crm","medicalSpecialty"]
+    non_key_attributes = ["fullName","birthday","email","contactNumber","isActive","crm","medicalSpecialty"]
   }
 
   tags = {
