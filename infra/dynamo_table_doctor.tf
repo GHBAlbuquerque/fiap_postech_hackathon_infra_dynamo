@@ -12,11 +12,6 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
   }
 
   #  attribute {
-  #    name = "isActive"
-  #    type = "BOOL"
-  #  }
-
-  #  attribute {
   #    name = "name"
   #    type = "S"
   #  }
@@ -65,6 +60,11 @@ resource "aws_dynamodb_table" "doctor-dynamodb-table" {
     name = "medicalSpecialty"
     type = "S"
   }
+
+  #  attribute {
+  #    name = "isActive"
+  #    type = "BOOL"
+  #  }
 
   global_secondary_index {
     name               = "SpecialtyIndex"

@@ -17,7 +17,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
   }
 
   attribute {
-    name = "pacientId"
+    name = "patientId"
     type = "S"
   }
 
@@ -37,9 +37,9 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
   #  }
 
   global_secondary_index {
-    name               = "AppointmentPacientIdIndex"
+    name               = "AppointmentPatientIdIndex"
     hash_key           = "doctorId"
-    range_key          = "pacientId"
+    range_key          = "patientId"
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"

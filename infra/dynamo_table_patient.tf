@@ -1,5 +1,5 @@
-resource "aws_dynamodb_table" "pacient-dynamodb-table" {
-  name           = "Pacient"
+resource "aws_dynamodb_table" "patient-dynamodb-table" {
+  name           = "Patient"
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
   write_capacity = 5
@@ -10,11 +10,6 @@ resource "aws_dynamodb_table" "pacient-dynamodb-table" {
     name = "id"
     type = "S"
   }
-
-  #  attribute {
-  #    name = "isActive"
-  #    type = "BOOL"
-  #  }
 
   #  attribute {
   #    name = "name"
@@ -56,6 +51,10 @@ resource "aws_dynamodb_table" "pacient-dynamodb-table" {
   #    type = "S"
   #  }
 
+  #  attribute {
+  #    name = "isActive"
+  #    type = "BOOL"
+  #  }
 
   global_secondary_index {
     name               = "EmailIndex"
@@ -76,7 +75,7 @@ resource "aws_dynamodb_table" "pacient-dynamodb-table" {
   }
 
   tags = {
-    Name        = "pacient-dynamodb-table"
+    Name        = "patient-dynamodb-table"
     Environment = "fiap-pos-tech"
   }
 }
