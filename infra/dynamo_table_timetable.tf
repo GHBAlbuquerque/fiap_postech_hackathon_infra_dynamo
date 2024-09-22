@@ -67,7 +67,7 @@ resource "aws_dynamodb_table" "timetable-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["sunday,monday,tuesday,wednesday,thursday,friday,saturday"]
+    non_key_attributes = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
   }
 
   tags = {
