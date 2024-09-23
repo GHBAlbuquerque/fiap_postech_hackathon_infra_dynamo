@@ -4,7 +4,6 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
   read_capacity  = 5
   write_capacity = 5
   hash_key       = "id"
-  range_key      = "doctorId"
 
   attribute {
     name = "id"
@@ -38,8 +37,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
 
   global_secondary_index {
     name               = "AppointmentPatientIdIndex"
-    hash_key           = "doctorId"
-    range_key          = "patientId"
+    hash_key           = "patientId"
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
@@ -47,7 +45,16 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
   }
 
   global_secondary_index {
-    name               = "AppointmentDateIndex"
+    name               = "AppointmentDoctorIdIndex"
+    hash_key           = "doctorId"
+    write_capacity     = 1
+    read_capacity      = 1
+    projection_type    = "INCLUDE"
+    non_key_attributes = ["id"]
+  }
+
+  global_secondary_index {
+    name               = "AppointmentDoctorIdDateIndex"
     hash_key           = "doctorId"
     range_key          = "date"
     write_capacity     = 1
