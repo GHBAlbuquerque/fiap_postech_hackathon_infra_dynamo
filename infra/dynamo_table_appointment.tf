@@ -60,7 +60,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["scheduledDate", "timeslot", "createdAt"]
+    non_key_attributes = ["patientId","scheduledDate", "timeslot", "createdAt"]
   }
 
   tags = {
