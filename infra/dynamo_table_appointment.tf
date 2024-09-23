@@ -41,7 +41,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["id, doctorId, date, timeslot, createdAt"]
+    non_key_attributes = ["doctorId", "date", "timeslot", "createdAt"]
   }
 
   global_secondary_index {
@@ -50,7 +50,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["id, patientId, date, timeslot, createdAt"]
+    non_key_attributes = ["patientId", "date", "timeslot", "createdAt"]
   }
 
   global_secondary_index {
@@ -60,7 +60,7 @@ resource "aws_dynamodb_table" "appointment-dynamodb-table" {
     write_capacity     = 1
     read_capacity      = 1
     projection_type    = "INCLUDE"
-    non_key_attributes = ["id, patientId, timeslot, createdAt"]
+    non_key_attributes = ["date", "timeslot", "createdAt"]
   }
 
   tags = {
